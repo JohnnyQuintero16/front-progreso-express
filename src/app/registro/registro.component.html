@@ -1,0 +1,123 @@
+<body>
+  <!-- header -->
+  <app-header></app-header>
+  <div class="text-center">
+    <h1>Registro</h1>
+    <h5 class="text-success">Progreso express</h5>
+  </div>
+  <form method="post">
+  <div class="row">
+    
+    <div class="col-6">
+
+      <div class="group">
+        <input
+          type="text"
+          [(ngModel)]="nombres"
+          name="name"
+          required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Nombres</label>
+      </div>
+      <div class="group">
+        <input
+        type="text"
+        [(ngModel)]="apellidos"
+        name="apellidos"
+        required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Apellidos</label>
+      </div>
+      <div class="group">
+        <input
+        type="password"
+        [(ngModel)]="clave"
+        name="clave"
+        required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Contraseña</label>
+      </div>
+    </div>
+    <div class="col-6">
+
+      <div class="group">
+        <input
+          type="number"
+          [(ngModel)]="celular"
+          name="celular"
+          required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Celular</label>
+      </div>
+      <div class="group">
+        <input
+          type="text"
+          [(ngModel)]="direccion"
+          name="direccion"
+          required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Direccion</label>
+      </div>
+      <div class="group">
+        <input
+        type="email"
+        [(ngModel)]="correo"
+        name="correo"
+        required="required"
+        />
+        <span class="highlight"></span><span class="bar"></span>
+        <label>Correo</label>
+      </div>
+
+    </div>
+    
+  </div>
+  <button type="submit" (click)="register()" class="button buttonBlue bg-success">
+    Registrarse
+    <div class="ripples buttonRipples">
+      <span class="ripplesCircle"></span>
+    </div>
+  </button>
+</form>
+
+
+  <!-- footer -->
+  <app-footer></app-footer>
+</body>
+<script
+  src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+  crossorigin="anonymous"
+></script>
+<!-- <div class="register">
+    <form class="custom-form" method="post">
+      <h1>Registrar</h1>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        placeholder="name"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        placeholder="username"
+        required="required"
+      />
+      <input
+        type="text"
+        [(ngModel)]="password"
+        name="password"
+        placeholder="password"
+        required="required"
+      />
+      <button type="submit" (click)="register()">Registrar</button>
+    </form>
+  </div> -->

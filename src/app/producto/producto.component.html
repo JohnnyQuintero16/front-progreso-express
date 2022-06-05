@@ -1,0 +1,65 @@
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<!-- <pre>
+  {{ proyectos | json }}
+</pre> -->
+<div class="row cont">
+<div class="col-3">
+<app-sidebar></app-sidebar>
+</div>
+<div class="col-9 panel-proyecto">
+    <div class="row mt-4 " style="width: 90%;">
+        <div class="col-6 text-success m-4">
+            <h1>Productos</h1>
+        </div> <hr>
+    </div>
+   
+    <div class="row m-5"> 
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio de venta</th>
+                <th scope="col">Precio de compra</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr *ngFor="let producto of productos">
+                <th scope="row">{{producto.nombre}}</th>
+                <td>{{producto.cantidad}}</td>
+                <td>{{producto.precioVenta | currency:' $'}}</td>
+                <td>{{producto.precioCompra | currency:' $'}}</td>
+                <td>{{producto.marca}}</td>
+                <td>{{producto.categoria.nombre}}</td>
+                <td>
+                    <button type="button" class="btn border " (click)="eliminarProyecto(producto.id)"><span class="material-symbols-outlined">
+                        delete
+                        </span>
+                    </button>
+                    <button type="button" class="btn border" (click)="getTareas(producto.id)" style="margin-left: 5px; "><span class="material-symbols-outlined">
+                        visibility
+                    </span></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 *ngIf="productos.length===0" style="text-align: center;">Sin proyectos!</h2>
+    <div class="row align-items-center" *ngIf="productos.length===0"><img style="width: 400px; height: 400px; margin: auto;" src="https://ouch-cdn2.icons8.com/e7jVgiFyJNrYD3-FUIV44X5AXO90vl1qqK9t0L0t7OE/rs:fit:784:784/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzI0/L2JmZWI0NTVmLTI5/ZDQtNGIxZi1hNmI1/LTc0ZDRkOTJlNGNm/ZS5zdmc.png" alt="" srcset=""></div>
+    </div>
+    
+</div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script>
+
+</script>
+<!-- <div class="col-9 border">
+
+</div> -->
