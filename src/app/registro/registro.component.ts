@@ -25,7 +25,7 @@ export class RegistroComponent implements OnInit {
       cellular: this.celular,
       direccion: this.direccion,
       correo: this.correo,
-      rol: 1
+      rol: 2
     };
     this.userService.register(user).subscribe(data => {
       

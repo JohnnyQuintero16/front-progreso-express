@@ -25,13 +25,13 @@ export class ProductoComponent implements OnInit {
       // });
     }
   
-    eliminarProyecto(id:string){
+    eliminarProducto(id:string){
     
-      // this.proyectoService.eliminar(id).subscribe(data =>{
-      //   console.log(data);
-      //   //LLAMAR A ELIMINAR LOS ALUMNOS QUE ESTEN EN ESE PROYECTO;
-      //   window.location.reload();
-      // });
+       this.productoService.eliminar(id).subscribe(data =>{
+         console.log(data);
+         //LLAMAR A ELIMINAR LOS ALUMNOS QUE ESTEN EN ESE PROYECTO;
+         window.location.reload();
+       });
       
     }
     getTareas(id:string){

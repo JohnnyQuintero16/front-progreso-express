@@ -6,6 +6,7 @@ import { usuario } from "./usuario.interface";
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   
   private apiUrl = 'http://localhost:8080/usuario'
@@ -21,7 +22,7 @@ export class UserService {
   }
 
   getUsuarios(): Observable<usuario[]>{
-     return this.http.get<usuario[]>(this.apiUrl+'/user');
+     return this.http.get<usuario[]>(this.apiUrl+'/usuarios');
   }
 
   setRol(rol: any){

@@ -19,6 +19,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductoComponent } from './producto/producto.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { ProductoclienteComponent } from './productocliente/productocliente.component';
+import { CarritocompraComponent } from './carritocompra/carritocompra.component';
+import { SidebarclienteComponent } from './sidebarcliente/sidebarcliente.component';
+import { ClienteloginComponent } from './clientelogin/clientelogin.component';
+import { PedidoclienteComponent } from './pedidocliente/pedidocliente.component';
+import { FacturasadminComponent } from './facturasadmin/facturasadmin.component';
+
 
 
 @NgModule({
@@ -34,7 +42,13 @@ import { ProductoComponent } from './producto/producto.component';
     TareaComponent,
     CrearTareaComponent,
     ProductoComponent,
-    
+    ClientesComponent,
+    ProductoclienteComponent,
+    CarritocompraComponent,
+    SidebarclienteComponent,
+    ClienteloginComponent,
+    PedidoclienteComponent,
+    FacturasadminComponent,
   ],
   imports: [
     BrowserModule,

@@ -20,17 +20,15 @@ export class LoginComponent {//implements OnInit {
       correo: this.correo, 
       clave: this.password};
     this.userService.login(user).subscribe( (data) => {
-
-      //guardo el token
-      // this.userService.setToken(data.body);
-      //rol
       
       // this.userService.setRol(data.usuario.username) //corregir
       //al hacer login vaya a pagina principal
       
-      this.router.navigateByUrl('proyecto');
-
-      console.log(data);
+      if(data.rol.id == 1){
+        this.router.navigateByUrl('producto');
+      }else{
+        this.router.navigateByUrl('pedidocliente/' + data.id);
+      }
     },
      (err) =>{
          

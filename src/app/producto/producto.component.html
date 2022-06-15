@@ -15,7 +15,8 @@
             <h1>Productos</h1>
         </div> <hr>
     </div>
-   
+    <button type="button" class="btn btn-success">Agregar Producto Nuevo</button>
+    
     <div class="row m-5"> 
         <table class="table">
             <thead>
@@ -39,24 +40,24 @@
                 <td>{{producto.marca}}</td>
                 <td>{{producto.categoria.nombre}}</td>
                 <td>
-                    <button type="button" class="btn border " (click)="eliminarProyecto(producto.id)"><span class="material-symbols-outlined">
+                    <button type="button" class="btn border " (click)="eliminarProducto(producto.id)"><span class="material-symbols-outlined">
                         delete
                         </span>
                     </button>
-                    <button type="button" class="btn border" (click)="getTareas(producto.id)" style="margin-left: 5px; "><span class="material-symbols-outlined">
-                        visibility
-                    </span></button>
                 </td>
               </tr>
             </tbody>
           </table>
-          <h2 *ngIf="productos.length===0" style="text-align: center;">Sin proyectos!</h2>
+          <h2 *ngIf="productos.length===0" style="text-align: center;">Sin productos!</h2>
     <div class="row align-items-center" *ngIf="productos.length===0"><img style="width: 400px; height: 400px; margin: auto;" src="https://ouch-cdn2.icons8.com/e7jVgiFyJNrYD3-FUIV44X5AXO90vl1qqK9t0L0t7OE/rs:fit:784:784/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzI0/L2JmZWI0NTVmLTI5/ZDQtNGIxZi1hNmI1/LTc0ZDRkOTJlNGNm/ZS5zdmc.png" alt="" srcset=""></div>
     </div>
     
 </div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
 <script>
 
 </script>
