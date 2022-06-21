@@ -8,7 +8,7 @@ import { CookieService } from "ngx-cookie-service";
 })
 export class ProductoService {
 
-  private apiUrl = 'http://localhost:8080/producto'
+  private apiUrl = 'https://progreso-express.herokuapp.com/producto'
   constructor(private http: HttpClient) {      
 
   }

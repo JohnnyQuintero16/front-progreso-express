@@ -9,7 +9,7 @@ import { usuario } from "./usuario.interface";
 
 export class UserService {
   
-  private apiUrl = 'http://localhost:8080/usuario'
+  private apiUrl = 'https://progreso-express.herokuapp.com/usuario'
   constructor(private http: HttpClient, private cookies: CookieService) { 
 
   }

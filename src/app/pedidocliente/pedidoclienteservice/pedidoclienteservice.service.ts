@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class PedidoclienteserviceService {
-  private apiUrl = 'http://localhost:8080/cliente'
+  private apiUrl = 'https://progreso-express.herokuapp.com/cliente'
 
   constructor(private http: HttpClient) {      
   
