@@ -26,41 +26,7 @@ export class CrearProyectoComponent implements OnInit{
   constructor(public crearProyectoService : crearProyectoService,
     public userService : UserService) { }//
 
-  crearProyecto(){
-
-        const proyecto = {
-            nombre: this.nombre,
-            descripcion: this.descripcion
-        }
-        const usuariosSelected = document.querySelectorAll('input[type=checkbox]:checked');
-        //para saber quien es el lider
-        const lider = document.querySelectorAll('input[type=radio]:checked');
-        this.Eslider = lider[0].id;
-        let seleccionados = new Array();
-        for(let i=0; i<usuariosSelected.length; i++){
-          seleccionados.push(usuariosSelected[i].id);
-        }
-      
-        let id_proyecto_creado = '';
-    
-        this.crearProyectoService.crearProyecto(proyecto).subscribe(data => {
-              id_proyecto_creado = data._id;
-              
-        
-              for(let i=0; i<seleccionados.length; i++){
-        
-              this.crearProyectoService.asociarProyecto(id_proyecto_creado, seleccionados[i], this.Eslider).subscribe(data => {
-                  
-                
-                
-              });
-            }
-        
-                 location.pathname = 'proyecto';
-            });
-    
-    
-  }
+  
   // asociar(id_proyecto_creado:string){
       
 //  }

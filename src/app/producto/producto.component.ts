@@ -45,13 +45,17 @@ export class ProductoComponent implements OnInit {
       // });
       
     }
+
+    crearProducto(){
+      
+    }
     ngOnInit(): void {
   
       this.productoService.getProductos()
       .pipe(
-          tap((productos: any[]) =>{
-            this.productos = productos;
-          })
+        tap((productos: any[]) =>{
+          this.productos = productos;
+        })
       )
       .subscribe();
     }

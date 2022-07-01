@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Producto } from '../models';
+import { Router } from '@angular/router';
+import { ProductoClienteService } from './service/productocliente.service';
+import { tap } from 'rxjs';
 
 
 @Component({
@@ -9,12 +12,17 @@ import { Producto } from '../models';
 })
 export class ProductoclienteComponent implements OnInit {
 
-  @Input()
-  producto!: Producto;
+  productos!:any[];
 
-  constructor() { }
+  constructor(public productoClienteService: ProductoClienteService,
+     public router: Router) { }
 
   ngOnInit(): void {
+    this.productoClienteService.getProductos().pipe(
+      tap((productos: any[]) =>{
+        this.productos = productos;
+      })
+    ).subscribe();
   }
 
   addCarrito(){

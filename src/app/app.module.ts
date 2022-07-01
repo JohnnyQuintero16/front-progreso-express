@@ -13,8 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CrearProyectoComponent } from './crear-proyecto/crear-proyecto.component';
-import { TareaComponent } from './tarea/tarea.component';
-import { CrearTareaComponent } from './crear-tarea/crear-tarea.component';
+import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -26,8 +25,7 @@ import { SidebarclienteComponent } from './sidebarcliente/sidebarcliente.compone
 import { ClienteloginComponent } from './clientelogin/clientelogin.component';
 import { PedidoclienteComponent } from './pedidocliente/pedidocliente.component';
 import { FacturasadminComponent } from './facturasadmin/facturasadmin.component';
-
-
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +37,7 @@ import { FacturasadminComponent } from './facturasadmin/facturasadmin.component'
     InicioComponent,
     SidebarComponent,
     CrearProyectoComponent,
-    TareaComponent,
-    CrearTareaComponent,
+    CrearProductoComponent,
     ProductoComponent,
     ClientesComponent,
     ProductoclienteComponent,
@@ -49,6 +46,7 @@ import { FacturasadminComponent } from './facturasadmin/facturasadmin.component'
     ClienteloginComponent,
     PedidoclienteComponent,
     FacturasadminComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,10 +54,10 @@ import { FacturasadminComponent } from './facturasadmin/facturasadmin.component'
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule, 
+    MatDialogModule,
     MatButtonModule,
   ],
   providers: [CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

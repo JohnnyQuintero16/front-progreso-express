@@ -23,6 +23,9 @@ export class ProductoService {
     return this.http.delete(`${this.apiUrl}/eliminar/${id}`);
   }
 
+  crearProducto(producto:any): Observable<any>{
+    return this.http.post(this.apiUrl+'/guardar',producto);
+  }
   
 //   setToken(token: any) {
 //     this.cookies.set("token", token);
