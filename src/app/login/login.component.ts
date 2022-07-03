@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
 import {Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -22,16 +23,31 @@ export class LoginComponent {//implements OnInit {
       clave: this.password};
     this.userService.login(user).subscribe( (data) => {
       
-      // this.userService.setRol(data.usuario.username) //corregir
-      //al hacer login vaya a pagina principal
-      
-      this.cookie.set("usuariosesion",JSON.stringify(data));
+      Swal.fire({
+        title:"Validando Información",
+        timer:1000,
+        didOpen: ()=>{
+          Swal.showLoading();
+        }
+      }).then(()=>{
+        Swal.fire({
+          title:"bienvenido!",
+          text:"Inicio de sesión correcto",
+          icon:"success",
+          confirmButtonColor:"green"
+        }).then(()=>{
+          this.cookie.set("usuariosesion",JSON.stringify(data));
 
-      if(data.rol.id == 1){
-        this.router.navigateByUrl('producto');
-      }else{
-        this.router.navigateByUrl('pedidocliente/' + data.id);
-      }
+        if(data.rol.id == 1){
+          this.router.navigateByUrl('producto');
+        }else{
+          this.router.navigateByUrl('pedidocliente/' + data.id);
+        }
+        })
+        
+      })
+      
+      
     },
      (err) =>{
          

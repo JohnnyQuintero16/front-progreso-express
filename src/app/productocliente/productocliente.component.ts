@@ -3,6 +3,7 @@ import { Producto } from '../models';
 import { Router } from '@angular/router';
 import { ProductoClienteService } from './service/productocliente.service';
 import { tap } from 'rxjs';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -23,6 +24,13 @@ export class ProductoclienteComponent implements OnInit {
         this.productos = productos;
       })
     ).subscribe();
+    Swal.fire({
+      title:"Cargando datos por favor espere...",
+      timer:2000,
+      didOpen: ()=>{
+        Swal.showLoading();
+      }
+    });
   }
 
   addCarrito(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { UserService } from '../user/user.service';
 
 @Component({
@@ -28,9 +29,23 @@ export class RegistroComponent implements OnInit {
       rol: 2
     };
     this.userService.register(user).subscribe(data => {
-      
-      
-      location.pathname = 'login';
+      Swal.fire({
+        title:"Guardando datos, un momento...",
+        timer:2000,
+        didOpen: ()=>{
+          Swal.showLoading();
+        }
+      }).then((data)=>{
+        Swal.fire({
+          title:"Registro Exitoso",
+          icon:"success",
+          confirmButtonColor:"green"
+        }).then((res) =>{
+          if(res.isConfirmed){
+            location.pathname = 'login';
+          }
+        })
+      });
     }, err => {
       
       alert('Ha ocurrido un error');

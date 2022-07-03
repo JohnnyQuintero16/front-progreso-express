@@ -24,19 +24,4 @@ export class UserService {
   getUsuarios(): Observable<usuario[]>{
      return this.http.get<usuario[]>(this.apiUrl+'/usuarios');
   }
-
-  setRol(rol: any){
-    this.cookies.set("rol", rol);
-  }
-
-  getRol(){
-    return this.cookies.get("rol");
-  }
-
-  setToken(token: any) {
-    this.cookies.set("token", token);
-  }
-  getToken() {
-    return this.cookies.get("token");
-  }
 }

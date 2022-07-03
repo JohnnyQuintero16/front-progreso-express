@@ -38,15 +38,23 @@ export class PerfilComponent implements OnInit {
 
     this.servicePerfilService.actualizarUser(userUpdate).subscribe(data =>{
       Swal.fire({
-        title: 'Exitoso!',
-        text: "La información se actualizo, debes iniciar sesión de nuevo!",
-        icon: 'success',
-        confirmButtonColor: 'green',
-        confirmButtonText: 'Iniciar sesión'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.pathname = "login";
+        title:"Validando Información",
+        timer:1000,
+        didOpen: ()=>{
+          Swal.showLoading();
         }
+      }).then(()=>{
+        Swal.fire({
+          title: 'Exitoso!',
+          text: "La información se actualizo, debes iniciar sesión de nuevo!",
+          icon: 'success',
+          confirmButtonColor: 'green',
+          confirmButtonText: 'Iniciar sesión'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.pathname = "login";
+          }
+        })
       })
     })
   }

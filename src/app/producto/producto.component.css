@@ -7,6 +7,6 @@
 
 .btn:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
         color: #000;
-        background-color: rgb(240, 3, 3);
+        background-color: rgb(109, 151, 146);
         border-color: rgb(252, 233, 233); /*set the color you want here*/
     }

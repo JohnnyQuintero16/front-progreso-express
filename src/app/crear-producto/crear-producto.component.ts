@@ -57,16 +57,25 @@ categorias= [
     console.log(producto);
     this.crearProductoService.crearProducto(producto).subscribe(data =>{
       Swal.fire({
-        title: 'Exitoso!',
-        text: "El producto ha sido guardado!",
-        icon: 'success',
-        confirmButtonColor: 'green',
-        confirmButtonText: 'OK'
-      }).then((result) => {
-        if (result.isConfirmed) {
-          location.pathname = "producto";
+        title:"Guardando Información",
+        timer:1800,
+        didOpen: ()=>{
+          Swal.showLoading();
         }
+      }).then(()=>{
+        Swal.fire({
+          title: 'Exitoso!',
+          text: "El producto ha sido guardado!",
+          icon: 'success',
+          confirmButtonColor: 'green',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            location.pathname = "producto";
+          }
+        })
       })
+      
     })
   }
   ngOnInit(): void {

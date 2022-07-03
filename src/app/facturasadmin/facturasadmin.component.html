@@ -17,7 +17,7 @@
     </div>
   
     <div class="row m-5">
-      <table class="table">
+      <table class="table table-bordered table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">Id factura</th>
@@ -28,31 +28,20 @@
           </tr>
         </thead>
   
-        <!--
         <tbody>
-          <tr *ngFor="let producto of productos">
-            <th scope="row">{{ producto.nombre }}</th>
-            <td>{{ producto.cantidad }}</td>
-            <td>{{ producto.precioVenta | currency: " $" }}</td>
-            <td>{{ producto.precioCompra | currency: " $" }}</td>
-            <td>{{ producto.marca }}</td>
-            <td>{{ producto.categoria.nombre }}</td>
-            <td>
-              <button
-                type="button"
-                class="btn border"
-                (click)="eliminarProducto(producto.id)"
-              >
-                <span class="material-symbols-outlined"> delete </span>
-              </button>
-            </td>
+          <tr *ngFor="let factura of facturas">
+            <th scope="row">{{ factura.id }}</th>
+            <td>Venta</td>
+            <td>{{ factura.fecha }}</td>
+            <td>{{ factura.total | currency: " $" }}</td>
+            <td>{{ factura.descuento | currency: " $" }}</td>
           </tr>
         </tbody>
       </table>
-      <h2 *ngIf="productos.length === 0" style="text-align: center">
-        Sin productos!
+      <h2 *ngIf="facturas.length === 0" style="text-align: center">
+        Sin facturas registradas
       </h2>
-      <div class="row align-items-center" *ngIf="productos.length === 0">
+      <div class="row align-items-center" *ngIf="facturas.length === 0">
         <img
           style="width: 400px; height: 400px; margin: auto"
           src="https://ouch-cdn2.icons8.com/e7jVgiFyJNrYD3-FUIV44X5AXO90vl1qqK9t0L0t7OE/rs:fit:784:784/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMzI0/L2JmZWI0NTVmLTI5/ZDQtNGIxZi1hNmI1/LTc0ZDRkOTJlNGNm/ZS5zdmc.png"
@@ -62,7 +51,7 @@
       </div>
     </div>
   
-  </div>-->
+  </div>
   <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
   <script></script>
   <!-- <div class="col-9 border">

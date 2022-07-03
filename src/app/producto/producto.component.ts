@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/internal/operators/tap';
 import { ProductoService } from './productoService/producto.service';
+import Swal from'sweetalert2';
 
 @Component({
   selector: 'app-producto',
@@ -14,16 +15,6 @@ export class ProductoComponent implements OnInit {
 
   constructor(public productoService: ProductoService,
      public router: Router) { }
-
-     getProyectos() {
-    
-      //   data => {
-  
-      //   //al hacer login vaya a pagina principal
-      //   this.router.navigateByUrl('proyecto');
-      //   console.log(data);
-      // });
-    }
   
     eliminarProducto(id:string){
     
@@ -46,9 +37,6 @@ export class ProductoComponent implements OnInit {
       
     }
 
-    crearProducto(){
-      
-    }
     ngOnInit(): void {
   
       this.productoService.getProductos()
@@ -58,6 +46,14 @@ export class ProductoComponent implements OnInit {
         })
       )
       .subscribe();
+      
+        Swal.fire({
+          title:"Cargando datos por favor espere...",
+          timer:2000,
+          didOpen: ()=>{
+            Swal.showLoading();
+          }
+        });
     }
 
 }
