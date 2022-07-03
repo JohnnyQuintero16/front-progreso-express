@@ -3,6 +3,10 @@ import { UserService } from '../user/user.service';
 import { crearProductoService } from './crearProductoService/crearProductoService';
 import { usuario } from '../user/usuario.interface';
 import { tap } from 'rxjs/operators';
+import { ReactiveFormsModule } from '@angular/forms';
+import Swal from'sweetalert2';
+
+
 
 @Component({
   selector: 'app-crear-producto',
@@ -12,27 +16,62 @@ import { tap } from 'rxjs/operators';
 export class CrearProductoComponent implements OnInit {
 
   // LOS VALORES QUE IRAN EN EL FORM
-  title!:string;
-  descripcion!:string;
-  idProyecto!:string;
-  usuarioAsignado!:string;
-  //para los usuarios
-  usuarios!:usuario[];
+  id!:number;
+  nombre!:string;
+  cantidad!:number;
+  precioVenta!:number;
+  precioCompra!:number;
+  imgUrl!:string;
+  marca!:string;
+  categoria!:string;
+  estado!:string;
 
-  constructor(public userService : UserService, public crearProductoService : crearProductoService) { }
+categorias= [
+  {id:1,value:"toallas"},
+  {id:2,value:"jabones"},
+  {id:3,value:"aluminios"},
+  {id:4,value:"embloplast"},
+  {id:5,value:"encendedores"},
+  {id:6,value:"copitos"},
+  {id:7,value:"desinfectantes"},
+  {id:8,value:"protectores"},
+  {id:9,value:"esponjas"},
+  {id:10,value:"cintas"},
+  {id:11,value:"algodon"},
+]
+  constructor(public crearProductoService : crearProductoService) { }
 
+  crearProducto(){
+    const producto ={
+      id:0,
+      nombre : this.nombre,
+      cantidad : this.cantidad,
+      precioVenta: this.precioVenta,
+      precioCompra: this.precioCompra,
+      imgUrl: this.imgUrl,
+      estado:"activo",
+      marca: this.marca,
+      categoria: this.categoria
+    }
 
-
+    console.log(producto);
+    this.crearProductoService.crearProducto(producto).subscribe(data =>{
+      Swal.fire({
+        title: 'Exitoso!',
+        text: "El producto ha sido guardado!",
+        icon: 'success',
+        confirmButtonColor: 'green',
+        confirmButtonText: 'OK'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          location.pathname = "producto";
+        }
+      })
+    })
+  }
   ngOnInit(): void {
 
-    this.userService.getUsuarios()
-    .pipe(
-        tap((usuarios: usuario[]) =>{
-          this.usuarios = usuarios;
-          console.log(this.usuarios)
-        })
-    )
-    .subscribe();
+    
   }
 
 }

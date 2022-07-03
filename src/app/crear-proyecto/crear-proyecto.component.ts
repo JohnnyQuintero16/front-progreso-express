@@ -25,8 +25,6 @@ export class CrearProyectoComponent implements OnInit{
 
   constructor(public crearProyectoService : crearProyectoService,
     public userService : UserService) { }//
-
-  
   // asociar(id_proyecto_creado:string){
       
 //  }

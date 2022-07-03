@@ -11,9 +11,9 @@ export class crearProductoService {
   constructor(private http: HttpClient, private cookies: CookieService) { 
 
   }
-  crearTarea(tarea: any):Observable<any>{
-    
-    return this.http.post(this.apiUrl+'/guardar', tarea);
+  
+  crearProducto(producto: any):Observable<any>{
+    return this.http.post(this.apiUrl+'/guardar', producto);
   }
 
 

@@ -26,6 +26,8 @@ import { ClienteloginComponent } from './clientelogin/clientelogin.component';
 import { PedidoclienteComponent } from './pedidocliente/pedidocliente.component';
 import { FacturasadminComponent } from './facturasadmin/facturasadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
+    ReactiveFormsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
