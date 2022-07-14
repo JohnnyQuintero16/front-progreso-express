@@ -1,111 +1,118 @@
 <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+  />
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-
 <div class="row">
-<div class="col-3">
-<app-sidebar></app-sidebar>
-</div>
-<div class="col-9 panel-proyecto" >
+  <div class="col-3">
+    <app-sidebar></app-sidebar>
+  </div>
+
+  <div class="col-9 panel-proyecto">
     <div class="row">
-        <div class="col-12 text-success m-4">
-            <h1>Crear nueva producto</h1>
+      <div class="col-12 text-success m-4">
+        <h1>Crear nueva producto</h1>
+      </div>
+    </div>
+    <hr/>
+    <div class="row m-4">
+      <!-- AQUI EL FORM PARA CREAR TAREAS -->
+      <form [noValidate]="" method="post">
+        <div class="form-row d-flex">
+          <div class="form-group col-md-5">
+            <label for="nombre">Nombre</label><br />
+            <input
+              type="text"
+              [(ngModel)]="nombre"
+              name="nombre"
+              required="required"
+              id="nombre"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-md-3 mx-5">
+            <label for="cantidad">Cantidad</label><br />
+            <input
+              type="number"
+              [(ngModel)]="cantidad"
+              name="cantidad"
+              required="required"
+              id="cantidad"
+              class="form-control"
+            />
+          </div>
         </div>
+
+        <div class="form-row d-flex my-5">
+          <div class="form-group col-md-3">
+            <label for="precioVenta">Precio de venta</label><br />
+            <input
+              type="number"
+              [(ngModel)]="precioVenta"
+              name="precioVenta"
+              required="required"
+              id="precioVenta"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-md-3 mx-3">
+            <label for="precioCompra">Precio de compra</label><br />
+            <input
+              type="number"
+              [(ngModel)]="precioCompra"
+              name="precioCompra"
+              required="required"
+              id="precioCompra"
+              class="form-control"
+            />
+          </div>
+          <div class="form-group col-md-4 mx-3">
+            <label for="imgUrl">Link imagen del producto</label><br />
+            <input
+              type="text"
+              [(ngModel)]="imgUrl"
+              name="imgUrl"
+              required="required"
+              id="imgUrl"
+              class="form-control"
+            />
+          </div>
+        </div>
+
+        <div class="form-row d-flex">
+          <div class="form-group col-md-5">
+            <label for="marca">Marca</label><br />
+            <input
+              type="text"
+              [(ngModel)]="marca"
+              name="marca"
+              required="required"
+              id="marcaOption"
+              class="form-control"
+            />
+          </div>
+
+          <div class="form-group col-md-6 mx-5">
+            <label>Seleccione la categoria</label><br />
+            <select [(ngModel)]="categoria" name="categoria">
+              <option value="Selecciona Categoria" [selected]="0">
+                Selecciona Categoria
+              </option>
+              <option *ngFor="let j of categorias" value="{{ j.id }}">
+                {{ j.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <br /><br />
+        <button type="submit" (click)="crearProducto()" class="btn btn-success">
+          Crear +
+        </button>
+      </form>
     </div>
-    <hr>
-    <div class="row m-4"> 
-        <!-- AQUI EL FORM PARA CREAR TAREAS -->
-        <form method="post">
-            <div class="form-row d-flex">
-              <div class="form-group col-md-5">
-                <label for="nombre">Nombre</label><br>
-                <input 
-                type="text"
-                [(ngModel)]="nombre"
-                name="nombre"
-                required="required"
-                id="nombre"
-                class="form-control"
-                >
-              </div>
-              <div class="form-group col-md-3 mx-5">
-                <label for="cantidad">Cantidad</label><br>
-                <input 
-                type="number"
-                [(ngModel)]="cantidad"
-                name="cantidad"
-                required="required"
-                id="cantidad"
-                class="form-control"
-                >
-              </div>
-            </div>
-
-            <div class="form-row d-flex my-5">
-              <div class="form-group col-md-3">
-                <label for="precioVenta">Precio de venta</label><br>
-                <input 
-                type="number"
-                [(ngModel)]="precioVenta"
-                name="precioVenta"
-                required="required"
-                id="precioVenta"
-                class="form-control"
-                >
-              </div>
-              <div class="form-group col-md-3 mx-3">
-                <label for="precioCompra">Precio de compra</label><br>
-                <input 
-                type="number"
-                [(ngModel)]="precioCompra"
-                name="precioCompra"
-                required="required"
-                id="precioCompra"
-                class="form-control"
-                >
-              </div>
-              <div class="form-group col-md-4 mx-3">
-                <label for="imgUrl">Link imagen del producto</label><br>
-                <input 
-                type="text"
-                [(ngModel)]="imgUrl"
-                name="imgUrl"
-                required="required"
-                id="imgUrl"
-                class="form-control"
-                >
-              </div>
-            </div>
-
-            <div class="form-row d-flex">
-              <div class="form-group col-md-5">
-                <label for="marca">Marca</label><br>
-                <input 
-                type="text"
-                [(ngModel)]="marca"
-                name="marca"
-                required="required"
-                id="marcaOption"
-                class="form-control"
-                >            
-              </div>
-
-              <div class="form-group col-md-6 mx-5">
-                <label>Seleccione la categoria</label><br>
-                <select [(ngModel)]="categoria" name="categoria">
-                  <option value="Selecciona Categoria" [selected]="0">Selecciona Categoria</option>
-                  <option *ngFor="let j of categorias" value="{{j.id}}">{{j.value}}</option>
-                </select>
-              </div>
-            </div>
-            
-            <br><br> 
-          <button type="submit" (click)="crearProducto()" class="btn btn-success">Crear +</button>
-
-        </form>
-    </div>
-    
-</div>
+  </div>
 </div>

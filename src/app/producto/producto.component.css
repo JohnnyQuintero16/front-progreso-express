@@ -5,8 +5,18 @@
     background-color: white;
 }
 
-.btn:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
-        color: #000;
-        background-color: rgb(109, 151, 146);
-        border-color: rgb(252, 233, 233); /*set the color you want here*/
-    }
+/*.btn:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+        color: rgb(136, 127, 127);
+        background-color: rgb(180, 48, 48);
+        border-color: rgb(252, 233, 233); /*set the color you want here
+}*/
+
+
+.delete:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 0, 0);
+}
+.edit:hover{
+    color: rgb(0, 0, 0);
+    background-color: rgb(231, 227, 0);
+}

@@ -12,6 +12,7 @@ import { ClienteloginComponent } from './clientelogin/clientelogin.component';
 import { PedidoclienteComponent } from './pedidocliente/pedidocliente.component';
 import { FacturasadminComponent } from './facturasadmin/facturasadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 
 const appRoutes = [
     { path: 'login', component: LoginComponent,  pathMatch: 'full'},
@@ -20,6 +21,7 @@ const appRoutes = [
     { path: 'producto', component: ProductoComponent,  pathMatch: 'full'},
     { path: 'facturasadmin', component: FacturasadminComponent, pathMatch: 'full'},
     { path: 'crearProducto', component: CrearProductoComponent, pathMatch: 'full'},
+    { path: 'editarProducto/:idProducto', component: EditarProductoComponent, pathMatch: 'full'},
     { path: 'catalogoProductos', component: ProductoclienteComponent, pathMatch: 'full'},
     { path: 'clientelogin', component: ClienteloginComponent, pathMatch: 'full'},
     { path: 'pedidocliente/:idcliente', component: PedidoclienteComponent, pathMatch: 'full'},

@@ -27,6 +27,7 @@ import { PedidoclienteComponent } from './pedidocliente/pedidocliente.component'
 import { FacturasadminComponent } from './facturasadmin/facturasadmin.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditarProductoComponent } from './editar-producto/editar-producto.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PedidoclienteComponent,
     FacturasadminComponent,
     PerfilComponent,
+    EditarProductoComponent,
   ],
   imports: [
     BrowserModule,

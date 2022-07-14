@@ -53,8 +53,16 @@ categorias= [
       marca: this.marca,
       categoria: this.categoria
     }
-
-    console.log(producto);
+    if(producto.nombre === undefined || producto.cantidad === undefined || producto.precioCompra === undefined 
+    || producto.precioVenta === undefined || producto.imgUrl === undefined || producto.marca === undefined ||
+    producto.categoria === undefined){
+      Swal.fire({
+        title:"Error",
+        text: "Los campos estan mal digitados, por favior verifica",
+        icon:"error",
+        confirmButtonColor:"red"
+      })
+    }
     this.crearProductoService.crearProducto(producto).subscribe(data =>{
       Swal.fire({
         title:"Guardando Información",
@@ -79,8 +87,6 @@ categorias= [
     })
   }
   ngOnInit(): void {
-
-    
   }
 
 }
