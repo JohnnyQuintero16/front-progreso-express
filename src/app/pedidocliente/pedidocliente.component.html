@@ -28,6 +28,7 @@
           <th scope="col">fecha</th>
           <th scope="col">Precio Total</th>
           <th scope="col">Descuento</th>
+          <th scope="col">Total pagado</th>
         </tr>
       </thead>
 
@@ -39,6 +40,7 @@
           <td>{{ factura.fecha }}</td>
           <td>{{ factura.total | currency: " $" }}</td>
           <td>{{ factura.descuento | currency: " $" }}</td>
+          <td>{{ factura.total - factura.descuento | currency: " $" }}</td>
         </tr>
       </tbody>
     </table>
