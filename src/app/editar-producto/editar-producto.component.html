@@ -20,7 +20,7 @@
         <div class="col-12">
           <div
             class="col-12 m-1 card shadow"
-            style="height: 450px; width: 85%; padding: 20px"
+            style="height: 500px; width: 85%; padding: 20px"
           >
             <div class="row m-4">
               <!-- AQUI EL FORM PARA CREAR TAREAS -->
@@ -30,6 +30,7 @@
                     <label for="nombre">Nombre</label><br />
                     <input
                       type="text"
+                      [(ngModel)] = "nombre"
                       name="nombre"
                       required="required"
                       id="nombre"
@@ -40,6 +41,7 @@
                     <label for="cantidad">Cantidad</label><br />
                     <input
                       type="number"
+                      [(ngModel)] = "cantidad"
                       name="cantidad"
                       required="required"
                       id="cantidad"
@@ -54,6 +56,7 @@
                     <input
                       type="number"
                       name="precioVenta"
+                      [(ngModel)] = "precioVenta"
                       required="required"
                       id="precioVenta"
                       class="form-control"
@@ -63,6 +66,7 @@
                     <label for="precioCompra">Precio de compra</label><br />
                     <input
                       type="number"
+                      [(ngModel)] = "precioCompra"
                       name="precioCompra"
                       required="required"
                       id="precioCompra"
@@ -73,6 +77,7 @@
                     <label for="imgUrl">Link imagen del producto</label><br />
                     <input
                       type="text"
+                      [(ngModel)] = "imgUrl"
                       name="imgUrl"
                       required="required"
                       id="imgUrl"
@@ -86,26 +91,20 @@
                     <label for="marca">Marca</label><br />
                     <input
                       type="text"
+                      [(ngModel)] = "marca"
                       name="marca"
                       required="required"
                       id="marcaOption"
                       class="form-control"
                     />
                   </div>
-
-                  <div class="form-group col-md-6 mx-5">
-                    <label>Seleccione la categoria</label><br />
-                    <select name="categoria">
-                      <option value="Selecciona Categoria" [selected]="0">
-                        Selecciona Categoria
-                      </option>
-                      <option>1</option>
-                    </select>
+                  <div class="col" style="margin-left: 450px; margin-bottom: 0px; position:absolute;">
+                    <label for="marca">Imagen del producto</label><br />
+                    <img src='{{this.imgUrl}}' alt="" style="height: 200px; margin-bottom: 0px;">
                   </div>
                 </div>
-
-                <br /><br />
-                <button type="submit" class="btn btn-success">Crear +</button>
+                <br><br>
+                <button type="submit" (click)="updateProducto()" class="btn btn-success">Actualizar</button>
               </form>
             </div>
           </div>

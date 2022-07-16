@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import Swal from 'sweetalert2';
 
@@ -14,7 +14,7 @@ export class LoginComponent {//implements OnInit {
   correo!: string;
   password!: string;
 
-  constructor(public userService: UserService, public router: Router, private cookie:CookieService) { 
+  constructor(public userService: UserService, public route: ActivatedRoute,public router: Router, private cookie:CookieService) { 
     
   }
   login() {
@@ -41,6 +41,7 @@ export class LoginComponent {//implements OnInit {
         if(data.rol.id == 1){
           this.router.navigateByUrl('producto');
         }else{
+          
           this.router.navigateByUrl('pedidocliente/' + data.id);
         }
         })

@@ -47,9 +47,12 @@ export class RegistroComponent implements OnInit {
         })
       });
     }, err => {
-      
-      alert('Ha ocurrido un error');
-      console.log(err)
+      Swal.fire({
+        title : "Ha ocurrido un error",
+        text:"Por favor verifica los datos",
+        icon:"error"
+
+      })
      });
   }
   ngOnInit(): void {

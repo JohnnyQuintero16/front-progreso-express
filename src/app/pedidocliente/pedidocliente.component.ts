@@ -1,6 +1,7 @@
 import { Component, isDevMode, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { tap } from 'rxjs';
+import Swal from 'sweetalert2';
 import { PedidoclienteserviceService } from './pedidoclienteservice/pedidoclienteservice.service';
 
 @Component({
@@ -27,7 +28,13 @@ export class PedidoclienteComponent implements OnInit {
       )
       .subscribe();
     }); 
-   
+    Swal.fire({
+      title:"Cargando datos por favor espere...",
+      timer:4000,
+      didOpen: ()=>{
+        Swal.showLoading();
+      }
+    });
       
       
   }

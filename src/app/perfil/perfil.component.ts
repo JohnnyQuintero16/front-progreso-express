@@ -73,6 +73,13 @@ export class PerfilComponent implements OnInit {
     }else{
       this.usuarioadmin = false;
     }
+    Swal.fire({
+      title:"Cargando datos por favor espere...",
+      timer:2000,
+      didOpen: ()=>{
+        Swal.showLoading();
+      }
+    });
   }
 
 }

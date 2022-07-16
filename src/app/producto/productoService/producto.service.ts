@@ -26,11 +26,7 @@ export class ProductoService {
   crearProducto(producto:any): Observable<any>{
     return this.http.post(this.apiUrl+'/guardar',producto);
   }
-  
-//   setToken(token: any) {
-//     this.cookies.set("token", token);
-//   }
-//   getToken() {
-//     return this.cookies.get("token");
-//   }
+  actualizarProducto(producto:any): Observable<any>{
+    return this.http.post(this.apiUrl+'/actualizar',producto);
+  }
 }

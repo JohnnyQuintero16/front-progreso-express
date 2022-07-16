@@ -21,7 +21,7 @@ export class FacturasadminComponent implements OnInit {
     ).subscribe();
     Swal.fire({
       title:"Cargando datos por favor espere...",
-      timer:2000,
+      timer:5000,
       didOpen: ()=>{
         Swal.showLoading();
       }

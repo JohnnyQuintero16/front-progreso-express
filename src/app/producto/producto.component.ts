@@ -23,20 +23,7 @@ export class ProductoComponent implements OnInit {
          //LLAMAR A ELIMINAR LOS ALUMNOS QUE ESTEN EN ESE PROYECTO;
          window.location.reload();
        });
-      
     }
-    getTareas(id:string){
-      // sessionStorage.setItem('idProyectoActual', id);
-      // console.log(sessionStorage.getItem('idProyectoActual'))
-  
-      // this.tareaService.getTareas(id).subscribe(data =>{
-      //   //LLAMAR A ELIMINAR LOS ALUMNOS QUE ESTEN EN ESE PROYECTO;
-      //   console.log('redireccionaar');
-      //   location.pathname = 'tarea';
-      // });
-      
-    }
-
     ngOnInit(): void {
   
       this.productoService.getProductos()
